@@ -1,10 +1,11 @@
-# Portfolio one page template - ARCHIVED
+# Bloemenparadijs van Dortstraat project 2026
 
-Flat and responsive website template, designed and coded by [Maxim Orlov](https://github.com/orlovmax).
+De groenstrook aan de van Dortstraat is een monocultuur aan gras.  Een
+strook met inheemse meerjarige bloemen kan dit veranderen.
 
 Demo: [http://website-templates.github.io/portfolio_one-page-template](http://website-templates.github.io/portfolio_one-page-template/)
 
-![Mockup demo](screenshots/pic.jpg)
+![Mockup demo](screenshots/bloemen.jpg)
 Product mockup created with [http://magicmockups.com/](http://magicmockups.com/)
 
 ## Contents
