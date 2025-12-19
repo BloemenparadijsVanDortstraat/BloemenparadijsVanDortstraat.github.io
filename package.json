@@ -1,0 +1,26 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "simple website",
+  "main": "index.js",
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-gh-pages": "^0.5.4"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BloemenparadijsVanDortstraat/BloemenparadijsVanDortstraat.github.io.git"
+  },
+  "keywords": [
+    "bloemen"
+  ],
+  "author": "Simon Portegies Zwart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BloemenparadijsVanDortstraat/BloemenparadijsVanDortstraat.github.io/issues"
+  },
+  "homepage": "https://github.com/BloemenparadijsVanDortstraat/BloemenparadijsVanDortstraat.github.io#readme"
+}
