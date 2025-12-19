@@ -1,0 +1,3 @@
+remote_theme: hydecorp/hydejack@next
+plugins:
+  - jekyll-include-cache
