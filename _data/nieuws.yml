@@ -1,0 +1,16 @@
+# Laatste nieuws. Het bericht met de nieuwste datum staat bovenaan de site.
+# Nieuw bericht? Kopieer een blok en pas het aan.
+#
+#   datum:    JJJJ-MM-DD (verplicht)
+#   titel:    kop van het bericht (verplicht)
+#   tekst:    het bericht zelf (verplicht)
+#   foto:     pad naar een afbeelding in img/ (optioneel)
+#   foto_alt: korte beschrijving van de foto (bij een foto)
+
+- datum: 2026-10-25
+  titel: De schop gaat erin!
+  tekst: >
+    Op zondag 25 oktober zijn buurtbewoners, groot en klein, begonnen met
+    het graven van de eerste bloemenborders langs de van Dortstraat.
+  foto: img/aanleg_25102026.jpg
+  foto_alt: Buurtbewoners en kinderen graven samen de eerste bloemenborders langs de van Dortstraat

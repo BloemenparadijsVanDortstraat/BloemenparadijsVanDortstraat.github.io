@@ -1,171 +1,186 @@
-<!doctype html>
-<html>
-  <head>
-    <!-- Page setup -->
-    <meta charset="utf-8">
-    <title>Bloemenparadijs van Dortstraat</title>
-    <meta name="description" content="Noord aan zet website voor de van Dortstraat">
-    <meta name="author" content="Simon Portegies Zwart">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <link rel="icon" type="image/png" href="favicon.png">
-  
-    <!-- Stylesheets -->
-    <!-- Reset default styles and add support for google fonts -->
-    <!--
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
-    -->
-    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
-   
-    <!-- Custom styles -->
-    <link href="style.css" rel="stylesheet" type="text/css" />
+---
+layout: default
+---
+{%- comment -%}
+  De agenda, begroting en contactgegevens staan in de map _data/.
+  Die bestanden kun je aanpassen zonder hier iets te veranderen.
+{%- endcomment -%}
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-kicker">Noord aan Zet · Haarlem</p>
+    <h1>Bloemenparadijs<br>van Dortstraat</h1>
+    <p class="hero-lead">
+      Van saai gras naar een zee van inheemse bloemen, samen met de buurt.
+    </p>
+    <div class="hero-badges">
+      <span class="badge"><strong>2213</strong> stemmen</span>
+      <span class="badge"><strong>±800 m²</strong> bloemen</span>
+    </div>
+    <div class="next-up" id="next-up" hidden>
+      <span class="next-up-label">Volgende afspraak</span>
+      <a class="next-up-body" href="#planning"></a>
+    </div>
+  </div>
+</header>
 
-    <!-- Want to add Bootstrap? -->
-    <!-- Want to add Bootstrap? -->
-    <!-- Visit: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
-    
-  </head>
-  
-  <body>
+<main>
 
-    <header id="header">
-      <img src="img/logo.jpg">
-      
-      <h1>Bloemenparadijs van Dortstraat</h1>
-      
-      <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
-      <ul class="main-menu">
-        <li><a href="#plan">Plan</a></li>
-        <li><a href="#uitvoering">Uitvoering</a></li>
-        <li><a href="#planning">Planning</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#andere_projecten">Andere initiativen</a></li>
-      </ul>                 
-    </header>
-   
-    <div id="container">
-      <div class="inner">
-        <div id="content"> 
-          
-          <div id="plan" class="content-region hide">
-            <h2>Plan</h2>
-            <p>
-              <h3>De gemeente Haarlem heeft het plan om van de van Dortstraat een bloemenparadijs te maken gehonoreerd (met 2213 stemmen)</h3>
+  {%- assign nieuws = site.data.nieuws | sort: "datum" | reverse | first %}
+  {%- if nieuws %}
+  <section id="nieuws" class="section news">
+    <div class="wrap news-card">
+      {%- if nieuws.foto %}
+      <a href="{{ nieuws.foto | relative_url }}" class="news-photo">
+        <img src="{{ nieuws.foto | relative_url }}" alt="{{ nieuws.foto_alt }}">
+      </a>
+      {%- endif %}
+      <div class="news-body">
+        <p class="news-kicker">Laatste nieuws</p>
+        <time datetime="{{ nieuws.datum | date: '%Y-%m-%d' }}" class="news-date">{% include datum.html datum=nieuws.datum %}</time>
+        <h2>{{ nieuws.titel }}</h2>
+        <p>{{ nieuws.tekst }}</p>
+      </div>
+    </div>
+  </section>
+  {%- endif %}
 
-              De groenstrook aan de van Dortstraat is geliefd bij
-              wandelaars, hondenbezitters en bewoners. Met een
-              monocultuur aan gras en een wandelpaadje is hij alleen
-              wat saai.  Een strook langs de weg met inheemse enkel-
-              en meerjarige bloemen kan dit veranderen. Een strook van
-              1 of 2 meter langs de lengte van de van Dortstraat zou
-              leiden tot een bloemenzee van ca. 800 vierkante meter.
-            </p>
-            <h3> uitgebreid 
-              <a href="GroeneProefwijk.pdf">plan voor Haarlem GroeneProefwijk</a> 
-              </h3>
-          </div>
+  <section id="plan" class="section">
+    <div class="wrap two-col">
+      <div>
+        <h2>Het plan</h2>
+        <p class="lead">
+          De gemeente Haarlem heeft het plan om van de van Dortstraat een
+          bloemenparadijs te maken gehonoreerd, met <strong>2213 stemmen</strong>.
+        </p>
+        <p>
+          De groenstrook aan de van Dortstraat is geliefd bij wandelaars,
+          hondenbezitters en bewoners. Met een monocultuur aan gras en een
+          wandelpaadje is hij alleen wat saai. Een strook langs de weg met
+          inheemse enkel- en meerjarige bloemen kan dit veranderen. Een strook
+          van 1 of 2 meter langs de lengte van de van Dortstraat zou leiden tot
+          een bloemenzee van ca. 800 vierkante meter.
+        </p>
+        <p>
+          <a class="button" href="{{ '/GroeneProefwijk.pdf' | relative_url }}">
+            Lees het uitgebreide plan voor Haarlem Groene Proefwijk (pdf)
+          </a>
+        </p>
+      </div>
+      <div class="compare">
+        <figure>
+          <img src="{{ '/img/van_Dorstraat_bloemen.jpg' | relative_url }}" alt="De groenstrook aan de van Dortstraat met molen, nu vooral gras" loading="lazy">
+          <figcaption>Nu</figcaption>
+        </figure>
+        <figure>
+          <img src="{{ '/img/background.jpg' | relative_url }}" alt="Impressie: een brede strook bloemen langs de van Dortstraat" loading="lazy">
+          <figcaption>Straks</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-          <div id="planning" class="content-region hide">
-            <h2>Planning</h2>
-            <p>
-              <ul>
-                <li>Overleg met gemeente & Bewoners: Maandag 24 augustus 17:00.</li>
-                <li>Overleg met uitvoerder (Ad): Zaterdag 22 augustus 10:00.</li>
-                <li>Buurtinformatie: zondag 30 mei 2026 om 17:00 in de Speeltuin Burchte ter Cleeff.</li>
-                <li>Kerngroep overleg: zaterdag 16 mei 2026 om 17:00 in de Speeltuin Burchte ter Cleeff.</li>
-                <li>Kerngroep overleg: zaterdag 3 mei 2026 om 17:00 in de Speeltuin Burchte ter Cleeff.</li>
-                <li>Werkbezoek en overleg gemeente: 30 maart 2026.</li>
-                <li>Vervolg ontwerp: 26 januari 2026.</li>
-                <img src="img/schets_26012026.jpg" width="300" alt="bloemperk tussen bomen"><br>
-                <li>6 perkjes van 2x12m tussen bomen tegenover nrs. 28, 44, 50, 52, 56 en 70.</li>
-                <img src="img/schets_30012026.jpg" width="300" alt="bloemperk tussen bomen"><br>
-                <li>perkjes van 2x12m tussen bomen met beschikbare ruimte.</li>
-                <li>Plan gehonoreerd: 14 december 2025.</li>
-                <li>Eerst ontwerp: november 15 2025.</li>
-                <li>Plan ingedient bij gemeente Haarlem: 1 oktober 2025.</li>
-                <img src="ontwerp_1.jpg">
-              </ul>                 
-            </p>
-          </div>
-          
-          <div id="uitvoering" class="content-region hide">
-            <h2>Uitvoering</h2>
-            <p>
-              In overleg met de bewoners van de van Dortstraat, en in
-              samenwerking met Berry van der Hoorn (Onderzoeker
-              biodiversiteit) en Ad de Veld (groenarchitect).
-
-              Schatting van de kosten:
-              <ul>
-                <li>Afgraven grasstrook: €4000</li>
-                <li>Grond geschikt maken voor bezaaiing: €500</li>
-                <li>Meerjarig bloemenzaad: €1000</li>
-                <li>Eenjarig bloemenzaad: €500</li>
-                <li>Onderhoud: €500/jaar</li>
-              </ul>                 
-              <h2>Totaal: €11.000</h2>
-              <h2>Gemeente subsidie: €6.000</h2>
-            </p>
-          </div>
-          
-          <div id="contact" class="content-region hide">
-            <h2>Contact en handige links</h2>
-            <p>
-              <ul>
-                <h2>Contact</h2>
-                <li>Initiatiefnemer:
-                  <a href='mailto:spz@strw.leidenuniv.nl?subject=HTML link'>Simon Portegies Zwart</a></li>
-                <li>Gemeente Haarlem:
-                  <a href='mailto:noordaanzet@haarlem.nl?subject=HTML link'>Marten Reinstra</a></li>
-                <li>Kernteam:
-                  Anne,
-                  Beatrijs,
-                  Bouke,
-                  Erik,
-                  Horriah,
-                  Jacqueline,
-                  Jan,
-                  Jasper,
-                  Lotte,
-                  Simon
-                  <hr>
-              </ul>
-            </p>
-            <p>
-              <ul>
-                <h2>Andere links</h2>
-                <li><a href='https://kaart.haarlem.nl'>Kaart van Haarlem groen.</a></li>
-                <li><a href='https://www.cruydthoeck.nl'>Ecologiesche zaden.</a></li>
-                <li><a href='https://grijsen.com'>Straatmeubuleir (insectenhotel).</a></li>
-              </ul>
-            </p>
-          </div>
-          <div id="andere_projecten" class="content-region hide">
-            <h2>Andere initiatieven</h2>
-            <p>
-              <ul> 10.1.2026 Van Dortstraat on Ice (Initiatief: Alwin en Joost).
-                <img src="img/vDortOnIce_10.1.2026.jpg" width="600" height="400" alt="vDort on Ice"><br>
-                Foto megaakt door Myrthe.
-              </ul>
-            </p>
-          </div>
+  <section id="uitvoering" class="section section-alt">
+    <div class="wrap two-col">
+      <div>
+        <h2>Uitvoering</h2>
+        <p>
+          In overleg met de bewoners van de van Dortstraat, en in samenwerking
+          met Berry van der Hoorn (onderzoeker biodiversiteit) en Ad de Veld
+          (groenarchitect).
+        </p>
+      </div>
+      <div class="card">
+        <h3>Schatting van de kosten</h3>
+        <table class="budget">
+          {%- for post in site.data.begroting.posten %}
+          <tr>
+            <td>{{ post.omschrijving }}</td>
+            <td>{% include euro.html bedrag=post.bedrag %}{% if post.per %}<small> per {{ post.per }}</small>{% endif %}</td>
+          </tr>
+          {%- endfor %}
+        </table>
+        {%- assign b = site.data.begroting %}
+        <div class="budget-totals">
+          <div><span>Totaal</span><strong>{% include euro.html bedrag=b.totaal %}</strong></div>
+          <div><span>Gemeente subsidie</span><strong>{% include euro.html bedrag=b.subsidie %}</strong></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <footer>
-    <!--
-      <div align=center>Visits: <a href='https://www.counter12.com'><img src='https://www.counter12.com/img-a3azbacbYb5zCaBY-9.gif' border='0' alt='free web counter'></a><script type='text/javascript' src='https://www.counter12.com/ad.js?id=a3azbacbYb5zCaBY'></script>
+  <section id="planning" class="section">
+    <div class="wrap">
+      <h2>Planning</h2>
+      <ol class="timeline">
+        {%- assign agenda = site.data.agenda | sort: "datum" | reverse %}
+        {%- for item in agenda %}
+        <li class="event" data-datum="{{ item.datum | date: '%Y-%m-%d' }}">
+          <div class="event-date">
+            <time datetime="{{ item.datum | date: '%Y-%m-%d' }}">{% include datum.html datum=item.datum %}</time>
+            {%- if item.tijd %}<span> · {{ item.tijd }}</span>{% endif %}
+          </div>
+          <h3>{{ item.titel }}</h3>
+          {%- if item.plaats %}<p class="event-place">{{ item.plaats }}</p>{% endif %}
+          {%- if item.tekst %}<p>{{ item.tekst }}</p>{% endif %}
+          {%- if item.foto %}
+          <a href="{{ item.foto | relative_url }}" class="event-photo">
+            <img src="{{ item.foto | relative_url }}" alt="{{ item.foto_alt }}" loading="lazy">
+          </a>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+    </div>
+  </section>
+
+  <section id="andere_projecten" class="section section-alt">
+    <div class="wrap two-col">
+      <div>
+        <h2>Andere initiatieven</h2>
+        <h3>Van Dortstraat on Ice</h3>
+        <p>
+          Op 10 januari 2026 veranderde de van Dortstraat in een ijsbaan.
+          Initiatief van Alwin en Joost.
+        </p>
       </div>
-      -->
-      
-      Initiatief van de gemeente Haarlem via <a href="https://noordaanzet.nl/zuid-noord/">Noord aan Zet</a>.
-    </footer>
-    
-    <!-- Load additional JS scripts here -->
-    <script type="text/javascript" src="script.js"></script>
-    
-  </body>
-</html>
+      <figure class="photo">
+        <img src="{{ '/img/vDortOnIce_10.1.2026.jpg' | relative_url }}" alt="Schaatsen op het ijs bij de van Dortstraat" loading="lazy">
+        <figcaption>Foto gemaakt door Myrthe.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="wrap three-col">
+      <div>
+        <h2>Contact</h2>
+        <ul class="plain">
+          {%- for p in site.data.contact.contactpersonen %}
+          <li>
+            <span class="muted">{{ p.rol }}</span><br>
+            <a href="mailto:{{ p.email }}?subject=Bloemenparadijs%20van%20Dortstraat">{{ p.naam }}</a>
+          </li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h3>Kernteam</h3>
+        <ul class="chips">
+          {%- for naam in site.data.contact.kernteam %}
+          <li>{{ naam }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+      <div>
+        <h3>Handige links</h3>
+        <ul class="plain">
+          {%- for link in site.data.contact.links %}
+          <li><a href="{{ link.url }}">{{ link.titel }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>

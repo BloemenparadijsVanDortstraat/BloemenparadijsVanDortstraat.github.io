@@ -1,0 +1,27 @@
+contactpersonen:
+  - rol: Initiatiefnemer
+    naam: Simon Portegies Zwart
+    email: spz@strw.leidenuniv.nl
+  - rol: Gemeente Haarlem
+    naam: Marten Reinstra
+    email: noordaanzet@haarlem.nl
+
+kernteam:
+  - Anne
+  - Beatrijs
+  - Bouke
+  - Erik
+  - Horriah
+  - Jacqueline
+  - Jan
+  - Jasper
+  - Lotte
+  - Simon
+
+links:
+  - titel: Kaart van Haarlem groen
+    url: https://kaart.haarlem.nl
+  - titel: Ecologische zaden (Cruydt-Hoeck)
+    url: https://www.cruydthoeck.nl
+  - titel: Straatmeubilair (insectenhotel)
+    url: https://grijsen.com

@@ -1,0 +1,9 @@
+{%- comment -%}
+  Toont een datum in het Nederlands, bijv. "zondag 25 oktober 2026".
+  Gebruik: {% include datum.html datum=item.datum %}
+{%- endcomment -%}
+{%- assign dagen = "zondag,maandag,dinsdag,woensdag,donderdag,vrijdag,zaterdag" | split: "," -%}
+{%- assign maanden = "januari,februari,maart,april,mei,juni,juli,augustus,september,oktober,november,december" | split: "," -%}
+{%- assign d = include.datum | date: "%w" | plus: 0 -%}
+{%- assign m = include.datum | date: "%-m" | minus: 1 -%}
+{{ dagen[d] }} {{ include.datum | date: "%-d" }} {{ maanden[m] }} {{ include.datum | date: "%Y" -}}

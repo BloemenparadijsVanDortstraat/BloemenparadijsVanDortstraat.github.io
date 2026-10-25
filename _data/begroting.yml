@@ -1,0 +1,17 @@
+# Schatting van de kosten. Bedragen in hele euro's, zonder punt.
+
+posten:
+  - omschrijving: Afgraven grasstrook
+    bedrag: 4000
+  - omschrijving: Grond geschikt maken voor bezaaiing
+    bedrag: 500
+  - omschrijving: Meerjarig bloemenzaad
+    bedrag: 1000
+  - omschrijving: Eenjarig bloemenzaad
+    bedrag: 500
+  - omschrijving: Onderhoud
+    bedrag: 500
+    per: jaar
+
+totaal: 11000
+subsidie: 6000

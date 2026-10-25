@@ -1,0 +1,68 @@
+# Agenda en tijdlijn van het project.
+#
+# Nieuwe afspraak toevoegen? Kopieer een blok en pas het aan.
+# De volgorde maakt niet uit: de site sorteert op datum en zet
+# komende afspraken automatisch bovenaan. De weekdag wordt ook
+# automatisch berekend, die hoef je dus niet te typen.
+#
+#   datum:    JJJJ-MM-DD (verplicht)
+#   tijd:     bijv. "17:00" (optioneel)
+#   titel:    korte omschrijving (verplicht)
+#   plaats:   waar (optioneel)
+#   tekst:    extra uitleg (optioneel)
+#   foto:     pad naar een afbeelding in img/ (optioneel)
+#   foto_alt: korte beschrijving van de foto (bij een foto)
+
+- datum: 2026-10-25
+  titel: Aanleg begonnen, de eerste borders worden gegraven
+  foto: img/aanleg_25102026.jpg
+  foto_alt: Buurtbewoners en kinderen graven samen de eerste bloemenborders langs de van Dortstraat
+
+- datum: 2026-08-24
+  tijd: "17:00"
+  titel: Overleg met gemeente en bewoners
+
+- datum: 2026-08-22
+  tijd: "10:00"
+  titel: Overleg met uitvoerder (Ad)
+
+- datum: 2026-05-30
+  tijd: "17:00"
+  titel: Buurtinformatie
+  plaats: Speeltuin Burchte ter Cleeff
+
+- datum: 2026-05-16
+  tijd: "17:00"
+  titel: Kerngroep overleg
+  plaats: Speeltuin Burchte ter Cleeff
+
+- datum: 2026-05-03
+  tijd: "17:00"
+  titel: Kerngroep overleg
+  plaats: Speeltuin Burchte ter Cleeff
+
+- datum: 2026-03-30
+  titel: Werkbezoek en overleg gemeente
+
+- datum: 2026-01-30
+  titel: Ontwerp aangepast
+  tekst: Perkjes van 2×12 m tussen de bomen, waar ruimte beschikbaar is.
+  foto: img/schets_30012026.jpg
+  foto_alt: Plattegrond met bloemborders tussen de bomen langs de van Dortstraat
+
+- datum: 2026-01-26
+  titel: Vervolg ontwerp
+  tekst: Zes perkjes van 2×12 m tussen de bomen, tegenover nrs. 28, 44, 50, 52, 56 en 70.
+  foto: img/schets_26012026.jpg
+  foto_alt: Schets van een bloemperk tussen de bomen
+
+- datum: 2025-12-14
+  titel: Plan gehonoreerd door de gemeente (2213 stemmen)
+
+- datum: 2025-11-15
+  titel: Eerste ontwerp
+  foto: img/ontwerp_1.jpg
+  foto_alt: Eerste ontwerp van de bloemenstrook
+
+- datum: 2025-10-01
+  titel: Plan ingediend bij gemeente Haarlem
